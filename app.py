@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request
 
 model = joblib.load('book_recommender_model.joblib')
 
-df = pd.read_csv('processed_book_data.csv')  
+df = pd.read_csv('preprocessed_book_data.csv')  
 
 df.set_index('Book-Title', inplace=True)  
 
