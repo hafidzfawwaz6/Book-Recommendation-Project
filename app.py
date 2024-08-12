@@ -27,8 +27,9 @@ def recommend():
     normalized_title = normalize_title(title)
 
     try:
-        matching_index = df.index.to_series().apply(normalize_title).get_loc(normalized_title)
-    except KeyError:
+        normalized_index = df.index.to_series().apply(normalize_title)
+        matching_index = normalized_index.index[normalized_index == normalized_title][0]
+    except IndexError:
         return jsonify({'error': f"Book '{title}' not found"}), 404
 
     recommended_titles = []
@@ -42,6 +43,7 @@ def recommend():
 
         books_info = []
         for rec_title in recommended_titles:
+
             normalized_rec_title = normalize_title(rec_title)
 
             try:
@@ -59,8 +61,6 @@ def recommend():
         return jsonify({'recommended_titles': recommended_titles, 'books_info': books_info})
     else:
         return jsonify({'error': f"Book '{title}' not found"}), 404
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
