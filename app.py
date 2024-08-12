@@ -16,8 +16,7 @@ def get_index():
 
 @app.route('/recommend', methods=['GET'])
 def recommend():
-    title = request.args.get('title')
-    title = "I'll be Seeing You".strip().lower().replace("'", '')
+    title = request.args.get('title').strip().lower().replace("'", '')
 
     # Find the index of the matching title (if it exists)
     matching_index = df.index.str.strip().str.lower().str.replace("'", '').get_loc(title)
