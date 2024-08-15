@@ -1,7 +1,7 @@
-from book import Book
+from book import BookModel
 from flask import Flask, jsonify, request
 
-book = Book(
+book = BookModel(
     'book/filtered/Books.csv',
     'preprocessed.csv',
     'model.joblib'

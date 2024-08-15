@@ -1,14 +1,15 @@
 import pandas as pd
 import joblib
 
-class Book:
+class BookModel:
     def __init__(self, dir_book: str, dir_preprocessed: str, dir_model: str):
-        self.df_book = self.getDF(dir_book, index='Book-Title')
-        self.df_preprocessed = self.getDF(dir_preprocessed, index='Book-Title')
+        self.df_book = BookModel.getDF(dir_book, index='Book-Title')
+        self.df_preprocessed = BookModel.getDF(dir_preprocessed, index='Book-Title')
 
         self.model = joblib.load(dir_model)
 
-    def getDF(self,dir: str, index=''):
+    @staticmethod
+    def getDF(dir: str, index=''):
         df = pd.read_csv(dir)
         if index != '': 
             df = df.set_index(index)
