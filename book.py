@@ -5,7 +5,6 @@ class BookModel:
     def __init__(self, dir_book: str, dir_preprocessed: str, dir_model: str):
         self.df_book = BookModel.getDF(dir_book, index='Book-Title')
         self.df_preprocessed = BookModel.getDF(dir_preprocessed, index='Book-Title')
-
         self.model = joblib.load(dir_model)
 
     @staticmethod
@@ -14,6 +13,15 @@ class BookModel:
         if index != '': 
             df = df.set_index(index)
         return df
+
+    def getAutocompletes(self, query: str):
+        if query == '':
+            return []
+        
+        titles = [t for t in self.df_book.index.tolist() if t.lower().startswith(query.lower())]
+        titles.sort()
+
+        return titles
 
     def getRecommendations(self, title: str):
         if title not in self.df_preprocessed.index:

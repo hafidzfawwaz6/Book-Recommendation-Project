@@ -1,7 +1,7 @@
 from book import BookModel
 from flask import Flask, jsonify, request
 
-book = BookModel(
+book_model = BookModel(
     'book/filtered/Books.csv',
     'preprocessed.csv',
     'model.joblib'
@@ -9,16 +9,22 @@ book = BookModel(
 
 app = Flask(__name__)
 
+@app.route('/autocomplete', methods=['GET'])
+def autocomplete():
+    query = request.args.get('query')
+
+    return jsonify(book_model.getAutocompletes(query)), 200 
+
 @app.route('/recommend', methods=['GET'])
 def recommend():
     title = request.args.get('title')
 
-    recommendations = book.getRecommendations(title)[1]
+    recommendations = book_model.getRecommendations(title)[1]
 
     if len(recommendations) == 0:
         return jsonify({'error': f"Book ' {title} ' not found"}), 404
     else:
-         return jsonify(recommendations)
+         return jsonify(recommendations), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
