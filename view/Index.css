@@ -53,7 +53,7 @@ nav {
 
     }
 
-    :is(.header-container, .search-card, .description-container, footer) {
+    :is(.header-container, .search-card, .description-container, footer, .result-container) {
 
         display: flex;
         justify-content: center;
@@ -80,14 +80,13 @@ nav {
 .description-container {
 
     padding: 5%;
-    margin: 20px 0px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
     margin: 25px 0px;
 
     @media screen and (min-width:1024px) {
-        margin: 0px;
+        margin: 20px 0px;
     }
 }
 .footer-list {

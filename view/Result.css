@@ -1,0 +1,47 @@
+body {
+    background-image: url(https://t3.ftcdn.net/jpg/03/44/52/84/360_F_344528412_kCNXLrHETwxS0ztSTcD6N4Z09FZGpOdQ.jpg);
+
+    .glass-layer {
+        background-color: rgba(19, 19, 97, 0.411);
+    }
+    :is(h2, p1) {
+        color: white;
+        font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    }
+
+}
+.result-container {
+    margin: 20px 0px;
+}
+.result-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.result-book {
+
+    border: 1px solid black;
+
+    & ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-self: center;
+        flex-wrap: wrap;
+        gap: 13px 5px;
+        padding: 5%;
+    }
+    & ul li {
+        width: 19%;
+        list-style: none;
+
+        
+    }
+    
+}
+
