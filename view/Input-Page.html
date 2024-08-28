@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Page</title>
+    <link href="Index.css" rel="stylesheet" type="text/css">
+    <link id="theme" href="Style1.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-layer">
+        <nav>
+            <ul>
+                <li><button onclick="swapStyleSheet('Style1.css')">Style 1</button></li>
+                <li><button onclick="swapStyleSheet('Style2.css')">Style 2</button></li>
+                <li><button onclick="swapStyleSheet('Style3.css')">Style 3</button></li>
+            </ul>
+        </nav>
+        <div class="website-container">
+            <header class="header-container">
+                <h1 class="machine-name">The Ultimate Book Finder!! (Version 1)</h1>
+            </header>
+            <div class="search-container">
+                <div class="search-card">
+                    <form class="form-container">
+                        <input class="query-type" type="text" placeholder="Enter book title here"> 
+                        <button type="submit">Find</button>
+                    </form>
+                </div>
+            </div>
+            <div class="description-container">
+                <h2> 
+                    How to use:
+                </h2> <br>
+                <h2>
+                    1. Input the book title that you wish to find.
+                </h2> <br> <br>
+                <h2>
+                    2. Press enter and wait for the machine to search in its library of books.
+                </h2> <br>
+                <h2> <br>
+                    3. Tadahh! Results will show on a new page (max. 10 books)
+                </h2>
+            </div>
+            <footer>
+                <ul class="footer-list">
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Copyright Claims</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Use</a></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function swapStyleSheet(sheet) {
+            document.getElementById("theme").setAttribute("href", sheet);
+        }
+    </script>
+</body>
+
+</html>
