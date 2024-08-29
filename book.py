@@ -18,7 +18,7 @@ class BookModel:
         if query == '':
             return []
         
-        titles = [t for t in self.df_book.index.tolist() if t.lower().startswith(query.lower())]
+        titles = [title for title in self.df_preprocessed.index.tolist() if title.lower().startswith(query.lower())]
         titles.sort()
 
         return titles
