@@ -5,11 +5,14 @@ body {
         background-color: rgba(19, 19, 97, 0.411);
         padding: 20px 0px;
     }
-    :is(h2,p1) {
+    :is(h2, p1) {
         color: white;
         font-family: "Roboto", sans-serif;
         font-weight: 800;
         font-style: normal;
+    }
+    li a {
+        color: white;
     }
 
 }
@@ -89,4 +92,8 @@ body {
         width: 100%;
         height: auto;
     }
+}
+
+.footer-list li a:hover{
+    color: rgb(38, 56, 73);
 }
