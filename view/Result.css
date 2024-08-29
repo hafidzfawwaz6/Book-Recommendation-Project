@@ -3,45 +3,90 @@ body {
 
     .glass-layer {
         background-color: rgba(19, 19, 97, 0.411);
+        padding: 20px 0px;
     }
-    :is(h2, p1) {
+    :is(h2,p1) {
         color: white;
         font-family: "Roboto", sans-serif;
-    font-weight: 800;
-    font-style: normal;
+        font-weight: 800;
+        font-style: normal;
     }
 
 }
 .result-container {
-    margin: 20px 0px;
-}
-.result-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-}
+    margin-bottom: 20px;
 
-.result-book {
-
-    border: 1px solid black;
-
-    & ul {
+    & .result-text {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        align-self: center;
-        flex-wrap: wrap;
-        gap: 13px 5px;
-        padding: 5%;
+        align-items: center;
+        height: 50vh;
     }
-    & ul li {
-        width: 19%;
-        list-style: none;
 
-        
-    }
+    & .result-book {
     
+        & ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: center;
+            flex-wrap: wrap;
+            gap: 13px 5px;
+            padding: 5%;
+        }
+     
+        & ul li {
+            width: 19%;
+            list-style: none;
+    
+    
+        }   
+    }
 }
 
+.book-container {
+    position: relative;
+    border: 2px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+
+    & .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 0s ease;
+        background-color: #2020206f;
+    }
+
+    &:hover .overlay {
+        opacity: 1;
+
+    }
+
+    & p1 {
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    & img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
