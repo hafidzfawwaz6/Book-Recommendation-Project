@@ -53,6 +53,13 @@ body {
     border: 2px solid black;
     border-radius: 20px;
     overflow: hidden;
+    height: fit-content;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+        transform: scale(1.25);
+        z-index: 1;
+    }
 
     & .overlay {
         position: absolute;
@@ -63,7 +70,7 @@ body {
         height: 100%;
         width: 100%;
         opacity: 0;
-        transition: 0s ease;
+        transition: 0.5s ease;
         background-color: #2020206f;
     }
 
