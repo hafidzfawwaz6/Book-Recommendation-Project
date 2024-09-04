@@ -1,7 +1,7 @@
 body {
     background-image: url(https://t3.ftcdn.net/jpg/03/44/52/84/360_F_344528412_kCNXLrHETwxS0ztSTcD6N4Z09FZGpOdQ.jpg);
 
-    .glass-layer {
+    & .glass-layer {
         background-color: rgba(19, 19, 97, 0.411);
         padding: 20px 0px;
     }
@@ -11,7 +11,7 @@ body {
         font-weight: 800;
         font-style: normal;
     }
-    li a {
+    & li a {
         color: white;
     }
 
@@ -63,10 +63,7 @@ body {
 
     & .overlay {
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        inset: 0;
         height: 100%;
         width: 100%;
         opacity: 0;
