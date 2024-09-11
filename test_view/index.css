@@ -1,0 +1,85 @@
+.title-container {
+    padding: 20px 0;
+
+    & div {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.card-container {
+    padding: 20px 0;
+    
+    & form {
+        display: flex;
+        justify-content: space-between;
+    }
+        
+    & input[type="text"] {
+        flex-grow: 1;
+    }
+}
+
+.paragraph-container {
+    padding: 20px 0;
+}
+
+.suggestion-container {
+    padding: 20px 0;
+
+    & p {
+        cursor: pointer;
+        color: white;
+    }
+
+    & p:is(:hover, :focus) {
+        color: skyblue;
+    }
+}
+
+.output-container {
+    padding: 20px 0;
+    
+    & p {
+        color: #c4ab62;
+    }
+}
+
+.console {
+    font-family: monospace;
+    padding: 0 20px;
+    border-radius: 5px;
+    background-color: #201c1c;
+
+    & span:first-of-type {
+        font-size: 15px;
+        color: white;
+    }
+
+    & > div {
+        max-height: 200px;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+}
+
+.books-container {
+    & ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    
+    & li {
+        width: 20%;
+        list-style: none;
+    }
+    
+    & a {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: white;
+        background-color: black;
+    }
+}

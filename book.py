@@ -18,19 +18,22 @@ class BookModel:
         if query == '':
             return []
         
-        titles = [t for t in self.df_book.index.tolist() if t.lower().startswith(query.lower())]
+        titles = [title for title in self.df_preprocessed.index.tolist() if title.lower().startswith(query.lower())]
         titles.sort()
 
         return titles
-
-    def getRecommendations(self, title: str):
+    
+    def getAllTitles(self):
+        return self.df_preprocessed.index.to_list()
+    
+    def getRecommendations(self, title: str, min: int):
         if title not in self.df_preprocessed.index:
             print(f"The book '{title}' does not exist in the dataset.")
             return [title, []]
 
         book_vector = self.df_preprocessed.loc[title].values.reshape(1, -1)
 
-        distances, indices = self.model.kneighbors(book_vector, n_neighbors=6)
+        distances, indices = self.model.kneighbors(book_vector, n_neighbors=min+1)
         distances, indices = distances.flatten()[1:], indices.flatten()[1:]
 
         df_recommended = pd.DataFrame({
